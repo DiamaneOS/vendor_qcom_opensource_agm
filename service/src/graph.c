@@ -336,7 +336,8 @@ int graph_init()
 
     snd_card_found = get_file_path_extn(file_path_extn, file_path_extn_wo_variant);
     if (snd_card_found) {
-        snprintf(acdb_path, ACDB_PATH_MAX_LENGTH, "%s%s", ACDB_PATH, file_path_extn);
+        //snprintf(acdb_path, ACDB_PATH_MAX_LENGTH, "%s%s", ACDB_PATH, file_path_extn);
+        snprintf(acdb_path, ACDB_PATH_MAX_LENGTH, "%s%s", ACDB_PATH, "volcano_mtp_fps");
     } else {
         ret = -ENOENT;
         goto err;
