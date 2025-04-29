@@ -18,6 +18,7 @@ LOCAL_CFLAGS        := -D_ANDROID_ -DAGM_DEBUG_METADATA -DAGM_USE_CUTILS
 LOCAL_CFLAGS        += -Wno-tautological-compare -Wno-macro-redefined -Wall
 LOCAL_CFLAGS        += -D_GNU_SOURCE -DACDB_PATH=\"/vendor/etc/acdbdata/\"
 LOCAL_CFLAGS        += -DACDB_DELTA_FILE_PATH="/data/vendor/audio/acdbdata/delta"
+LOCAL_CFLAGS        += -DAGM_MEMLOG_UNSUPPORTED
 
 LOCAL_C_INCLUDES    := $(LOCAL_PATH)/inc/public
 LOCAL_C_INCLUDES    += $(LOCAL_PATH)/inc/private
@@ -32,8 +33,7 @@ LOCAL_SRC_FILES  := \
     src/session_obj.c\
     src/device.c \
     src/utils.c \
-    src/device_hw_ep.c \
-    src/agm_memlogger.c
+    src/device_hw_ep.c
 
 LOCAL_HEADER_LIBRARIES := \
     libspf-headers \
@@ -47,7 +47,6 @@ LOCAL_SHARED_LIBRARIES := \
     liblx-osal \
     libaudioroute \
     libats \
-    libarmemlog \
     libcutils
 
 #if android version is R, use qtitinyalsa lib otherwise use upstream ones
