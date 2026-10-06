@@ -30,4 +30,6 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_HEADER_LIBRARIES := libagm_headers
 
+LOCAL_SANITIZE := cfi integer_overflow
+
 include $(BUILD_SHARED_LIBRARY)

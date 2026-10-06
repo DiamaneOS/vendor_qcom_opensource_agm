@@ -19,4 +19,6 @@ LOCAL_SHARED_LIBRARIES := \
     libexpat \
     libcutils
 
+LOCAL_SANITIZE := cfi integer_overflow
+
 include $(BUILD_SHARED_LIBRARY)
