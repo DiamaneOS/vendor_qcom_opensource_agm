@@ -37,6 +37,8 @@ LOCAL_SHARED_LIBRARIES += libexpat
 LOCAL_HEADER_LIBRARIES += libaudiologutils_headers
 endif
 
+LOCAL_SANITIZE := cfi integer_overflow
+
 include $(BUILD_SHARED_LIBRARY)
 
 # Build libagm_mixer_plugin
@@ -75,6 +77,8 @@ LOCAL_SHARED_LIBRARIES += libexpat
 LOCAL_HEADER_LIBRARIES += libaudiologutils_headers
 endif
 
+LOCAL_SANITIZE := cfi integer_overflow
+
 include $(BUILD_SHARED_LIBRARY)
 
 # Build libagm_compress_plugin
@@ -84,9 +88,6 @@ LOCAL_MODULE        := libagm_compress_plugin
 LOCAL_MODULE_OWNER  := qti
 LOCAL_MODULE_TAGS   := optional
 LOCAL_VENDOR_MODULE := true
-
-LOCAL_C_INCLUDES    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES     := src/agm_compress_plugin.c
 
@@ -119,6 +120,8 @@ LOCAL_SHARED_LIBRARIES += libaudio_log_utils
 LOCAL_SHARED_LIBRARIES += libexpat
 LOCAL_HEADER_LIBRARIES += libaudiologutils_headers
 endif
+
+LOCAL_SANITIZE := cfi integer_overflow
 
 include $(BUILD_SHARED_LIBRARY)
 

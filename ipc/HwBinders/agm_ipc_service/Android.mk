@@ -30,6 +30,8 @@ LOCAL_HEADER_LIBRARIES := libagmclient_headers \
                           libagm_headers \
                           libar-gsl_headers
 
+LOCAL_SANITIZE := cfi integer_overflow
+
 include $(BUILD_SHARED_LIBRARY)
 
 ifneq ($(strip $(AUDIO_FEATURE_ENABLED_AGM_HIDL)),true)
